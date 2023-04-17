@@ -16,7 +16,7 @@ use App\Http\Controllers\API\HomeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::post('quotes', [HomeController::class, 'sendQuote']);

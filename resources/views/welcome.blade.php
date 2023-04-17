@@ -1,61 +1,115 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+<!doctype html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Laravel Google Autocomplete Address Example</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <!-- Basic -->
+    <meta charset="UTF-8">
+
+    <meta name="keywords" content="HTML5 Admin Template" />
+    <meta name="description" content="Porto Admin - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="app_assets/vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="app_assets/vendor/animate/animate.css">
+
+    <link rel="stylesheet" href="app_assets/vendor/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="app_assets/vendor/magnific-popup/magnific-popup.css" />
+    <link rel="stylesheet" href="app_assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="app_assets/css/theme.css" />
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="app_assets/css/skins/default.css" />
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="app_assets/css/custom.css">
+
+    <!-- Head Libs -->
+    <script src="app_assets/vendor/modernizr/modernizr.js"></script>
+
 </head>
-
 <body>
-    <div class="container mt-5">
-        <h2>Implement Google Autocomplete Address in Laravel 8</h2>
-        <div class="form-group">
-            <label>Location/City/Address</label>
-            <input type="text" name="autocomplete" id="autocomplete" class="form-control"
-                placeholder="Choose Location">
+<!-- start: page -->
+<section class="body-sign">
+    <div class="center-sign">
+        <a href="/" class="logo float-left">
+            <img src="app_assets/img/logo.png" height="54" alt="Porto Admin" />
+        </a>
+
+        <div class="panel card-sign">
+            <div class="card-title-sign mt-3 text-right">
+                <h2 class="title text-uppercase font-weight-bold m-0"><i class="fas fa-user mr-1"></i> Sign In</h2>
+            </div>
+            <div class="card-body">
+                <form action="index.html" method="post">
+                    <div class="form-group mb-3">
+                        <label>Username</label>
+                        <div class="input-group">
+                            <input name="username" type="text" class="form-control form-control-lg" />
+                            <span class="input-group-append">
+										<span class="input-group-text">
+											<i class="fas fa-user"></i>
+										</span>
+									</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <div class="clearfix">
+                            <label class="float-left">Password</label>
+                            <a href="pages-recover-password.html" class="float-right">Lost Password?</a>
+                        </div>
+                        <div class="input-group">
+                            <input name="pwd" type="password" class="form-control form-control-lg" />
+                            <span class="input-group-append">
+										<span class="input-group-text">
+											<i class="fas fa-lock"></i>
+										</span>
+									</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4 text-right">
+                            <button type="submit" class="btn btn-primary mt-2">Sign In</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        {{-- <div class="form-group" id="latitudeArea">
-            <label>Latitude</label>
-            <input type="text" id="latitude" name="latitude" class="form-control">
-        </div>
-        <div class="form-group" id="longtitudeArea">
-            <label>Longitude</label>
-            <input type="text" name="longitude" id="longitude" class="form-control">
-        </div> --}}
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <p class="text-center text-muted mt-3 mb-3">&copy; Copyright 2017. All Rights Reserved.</p>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
-        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type='text/javascript'
-        src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDHvjFk37MOLVvM4Sxev9Kx9NrKusGEVok&libraries=places&callback=initAutocomplete'>
-    </script>
+</section>
+<!-- end: page -->
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#latitudeArea").addClass("d-none");
-            $("#longtitudeArea").addClass("d-none");
-        });
-    </script>
-    <script type="text/javascript">
-        google.maps.event.addDomListener(window, 'load', initialize);
+<!-- Vendor -->
+<script src="app_assets/vendor/jquery/jquery.js"></script>
+<script src="app_assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+<script src="app_assets/vendor/popper/umd/popper.min.js"></script>
+<script src="app_assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="app_assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="app_assets/vendor/common/common.js"></script>
+<script src="app_assets/vendor/nanoscroller/nanoscroller.js"></script>
+<script src="app_assets/vendor/magnific-popup/jquery.magnific-popup.js"></script>
+<script src="app_assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
 
-        function initialize() {
-            var input = document.getElementById('autocomplete')
-            var autocomplete = new google.maps.places.Autocomplete(input)
-            autocomplete.addListener('place_changed', function() {
-                var place = autocomplete.getPlace()
-                $('#latitude').val(place.geometry['location'].lat())
-                $('#longitude').val(place.geometry['location'].lng())
-                $("#latitudeArea").removeClass("d-none")
-                $("#longtitudeArea").removeClass("d-none")
-            });
-        }
-    </script>
+<!-- Theme Base, Components and Settings -->
+<script src="js/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="js/custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="js/theme.init.js"></script>
+
 </body>
-
 </html>
